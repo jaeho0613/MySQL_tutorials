@@ -1,8 +1,8 @@
-/* 이름: demo_scott.sql*/
-/* 설명 */
+/* �씠由�: demo_scott.sql*/
+/* �꽕紐� */
 
-/* madang 계정으로 접속, bonus,dept,emp,salegrade 생성 */
-/* MySQL Workbench에서   madang connection을 통해 접속한다. */
+/* madang 怨꾩젙�쑝濡� �젒�냽, bonus,dept,emp,salegrade �깮�꽦 */
+/* MySQL Workbench�뿉�꽌   madang connection�쓣 �넻�빐 �젒�냽�븳�떎. */
 
 DROP TABLE IF EXISTS BONUS;
 DROP TABLE IF EXISTS EMP;
