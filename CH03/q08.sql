@@ -1,12 +1,12 @@
--- 08 [±â¾÷ ÇÁ·ÎÁ§Æ® µ¥ÀÌÅÍº£ÀÌ½º] Á¦¸ñ ÁÙÀÓ..
+-- 08 [ê¸°ì—… í”„ë¡œì íŠ¸ ë°ì´í„°ë² ì´ìŠ¤] ì œëª© ì¤„ìž„..
 
--- (1) Å×ÀÌºí »ý¼º, µ¥ÀÌÅÍ ÀúÀå
--- ÃÊ±âÈ­ ¼³Á¤
+-- (1) í…Œì´ë¸” ìƒì„±, ë°ì´í„° ì €ìž¥
+-- ì´ˆê¸°í™” ì„¤ì •
 drop database if exists ch03;
 create database ch03;
 use ch03;
 
--- Å×ÀÌºí »ý¼º
+-- í…Œì´ë¸” ìƒì„±
 create table Employee
 (
 	empno int auto_increment primary key,
@@ -39,33 +39,33 @@ create table Works
 	hours_worked int
 );
 
--- ¿Ü·¡Å° ¼³Á¤
+-- ì™¸ëž˜í‚¤ ì„¤ì •
 alter table Employee add constraint foreign key(deptno) references Department(deptno) on delete cascade on update cascade;
 alter table Project add constraint foreign key(deptno) references Department(deptno) on delete cascade on update cascade;
 alter table Works add constraint foreign key(empno) references Employee(empno) on delete cascade on update cascade;
 alter table Works add constraint foreign key(projno) references Project(projno) on delete cascade on update cascade;
 
--- µ¥ÀÌÅÍ ÀúÀå
-insert into Department values(1, '°³¹ß1ÆÀ', 'ÀçÈ£');
-insert into Department values(2, '°³¹ß2ÆÀ', 'ÇÏÀ±');
-insert into Department values(3, '¼­ºñ½º1ÆÀ', 'Áø¿ì');
-insert into Department values(4, '¼­ºñ½º2ÆÀ', 'ÇÏÀ±');
+-- ë°ì´í„° ì €ìž¥
+insert into Department values(1, 'ê°œë°œ1íŒ€', 'ìž¬í˜¸');
+insert into Department values(2, 'ê°œë°œ2íŒ€', 'í•˜ìœ¤');
+insert into Department values(3, 'ì„œë¹„ìŠ¤1íŒ€', 'ì§„ìš°');
+insert into Department values(4, 'ì„œë¹„ìŠ¤2íŒ€', 'í•˜ìœ¤');
 
 insert into Project values(1, 'Admin Page Project', 1);
 insert into Project values(2, 'Client Page Project', 2);
 insert into Project values(3, 'Ad TV', 3);
 insert into Project values(4, 'Ad Web', 4);
 
-insert into Employee values(null, '¹ÎÁØ', '010-1234-1230', '¼­¿ï', '³²ÀÚ', 'IT', 1);
-insert into Employee values(null, '¼­ÁØ', '010-1234-1231', 'ºÎ»ê', '³²ÀÚ', 'IT', 2);
-insert into Employee values(null, '¿¹ÁØ', '010-1234-1232', '¿ï»ê', '¿©ÀÚ', 'service', 3);
-insert into Employee values(null, 'µµÀ±', '010-1234-1233', '±èÆ÷', '³²ÀÚ', 'IT', 1);
-insert into Employee values(null, '½Ã¿ì', '010-1234-1234', '¼­¿ï', '¿©ÀÚ', 'service', 4);
-insert into Employee values(null, 'ÁÖ¿ø', '010-1234-1235', 'ºÎ»ê', '¿©ÀÚ', 'IT', 2);
-insert into Employee values(null, 'ÇÏÁØ', '010-1234-1236', '±èÆ÷', '³²ÀÚ', 'service', 4);
-insert into Employee values(null, 'ÁöÈ£', '010-1234-1237', '¿ï»ê', '¿©ÀÚ', 'service', 3);
-insert into Employee values(null, 'ÁöÈÄ', '010-1234-1238', '¼­¿ï', '³²ÀÚ', 'IT', 1);
-insert into Employee values(null, 'ÁØ¼­', '010-1234-1239', '¼­¿ï', '¿©ÀÚ', 'IT', 2);
+insert into Employee values(null, 'ë¯¼ì¤€', '010-1234-1230', 'ì„œìš¸', 'ë‚¨ìž', 'IT', 1);
+insert into Employee values(null, 'ì„œì¤€', '010-1234-1231', 'ë¶€ì‚°', 'ë‚¨ìž', 'IT', 2);
+insert into Employee values(null, 'ì˜ˆì¤€', '010-1234-1232', 'ìš¸ì‚°', 'ì—¬ìž', 'service', 3);
+insert into Employee values(null, 'ë„ìœ¤', '010-1234-1233', 'ê¹€í¬', 'ë‚¨ìž', 'IT', 1);
+insert into Employee values(null, 'ì‹œìš°', '010-1234-1234', 'ì„œìš¸', 'ì—¬ìž', 'service', 4);
+insert into Employee values(null, 'ì£¼ì›', '010-1234-1235', 'ë¶€ì‚°', 'ì—¬ìž', 'IT', 2);
+insert into Employee values(null, 'í•˜ì¤€', '010-1234-1236', 'ê¹€í¬', 'ë‚¨ìž', 'service', 4);
+insert into Employee values(null, 'ì§€í˜¸', '010-1234-1237', 'ìš¸ì‚°', 'ì—¬ìž', 'service', 3);
+insert into Employee values(null, 'ì§€í›„', '010-1234-1238', 'ì„œìš¸', 'ë‚¨ìž', 'IT', 1);
+insert into Employee values(null, 'ì¤€ì„œ', '010-1234-1239', 'ì„œìš¸', 'ì—¬ìž', 'IT', 2);
 
 insert into Works values(1, 1, 10);
 insert into Works values(2, 2, 2);
@@ -83,35 +83,35 @@ select * from employee e ;
 select * from project p ;
 select * from works w ;
 
--- (2) ¸ðµç »ç¿øÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À.
+-- (2) ëª¨ë“  ì‚¬ì›ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤.
 select name from employee;
 
--- (3) ¿©ÀÚ »ç¿øÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À.
-select name from employee where sex = '¿©ÀÚ';
+-- (3) ì—¬ìž ì‚¬ì›ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤.
+select name from employee where sex = 'ì—¬ìž';
 
--- (4) ÆÀÀå(manager)ÀÇ ÀÌ¸§À» º¸ÀÌ½Ã¿À.
+-- (4) íŒ€ìž¥(manager)ì˜ ì´ë¦„ì„ ë³´ì´ì‹œì˜¤.
 select manager from department;
 
--- (5) 'IT' ºÎ¼­¿¡¼­ ÀÏÇÏ´Â »ç¿øÀÇ ÀÌ¸§°ú ÁÖ¼Ò¸¦ º¸ÀÌ½Ã¿À.
+-- (5) 'IT' ë¶€ì„œì—ì„œ ì¼í•˜ëŠ” ì‚¬ì›ì˜ ì´ë¦„ê³¼ ì£¼ì†Œë¥¼ ë³´ì´ì‹œì˜¤.
 select name, address
 from employee
 where `position` = 'IT';
 
--- (6) 'È«±æµ¿' ÆÀÀå(manager) ºÎ¼­¿¡¼­ ÀÏÇÏ´Â »ç¿øÀÇ ¼ö¸¦º¸ÀÌ½Ã¿À.
+-- (6) 'í™ê¸¸ë™' íŒ€ìž¥(manager) ë¶€ì„œì—ì„œ ì¼í•˜ëŠ” ì‚¬ì›ì˜ ìˆ˜ë¥¼ë³´ì´ì‹œì˜¤.
 select count(*)
 from employee e, (select deptno
 				  from department
-				  where manager = 'È«±æµ¿') dn
+				  where manager = 'í™ê¸¸ë™') dn
 where e.deptno = dn.deptno;
 
--- (7) »ç¿øµéÀÌ ÀÏÇÑ ½Ã°£ ¼ö¸¦ ºÎ¼­º°, »ç¿ø ÀÌ¸§º° ¿À¸§Â÷¼øÀ¸·Î º¸ÀÌ½Ã¿À.
+-- (7) ì‚¬ì›ë“¤ì´ ì¼í•œ ì‹œê°„ ìˆ˜ë¥¼ ë¶€ì„œë³„, ì‚¬ì› ì´ë¦„ë³„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ë³´ì´ì‹œì˜¤.
 select d.deptname, e.name, w.hours_worked 
 from works w, employee e , department d 
 where w.empno = e.empno and e.deptno = d.deptno 
 order by hours_worked;
 
--- (8) µÎ ¸í ÀÌ»óÀÇ »ç¿øÀÌ Âü¿©ÇÑ ÇÁ·ÎÁ§Æ®ÀÇ ¹øÈ£, ÀÌ¸§, »ç¿øÀÇ ¼ö¸¦ º¸ÀÌ½Ã¿À.		
-select re.projno 'ÇÁ·ÎÁ§Æ® ¹øÈ£', re.projname 'ÇÁ·ÎÁ§Æ® ÀÌ¸§', re.count '»ç¿ø ¼ö'
+-- (8) ë‘ ëª… ì´ìƒì˜ ì‚¬ì›ì´ ì°¸ì—¬í•œ í”„ë¡œì íŠ¸ì˜ ë²ˆí˜¸, ì´ë¦„, ì‚¬ì›ì˜ ìˆ˜ë¥¼ ë³´ì´ì‹œì˜¤.		
+select re.projno 'í”„ë¡œì íŠ¸ ë²ˆí˜¸', re.projname 'í”„ë¡œì íŠ¸ ì´ë¦„', re.count 'ì‚¬ì› ìˆ˜'
 from employee e join (
 					select w.empno, w.projno, p.projname ,if(count(*) >= 2, 'y', 'n') 'check', count(*) count
 					from works w join project p 
@@ -120,8 +120,8 @@ from employee e join (
 on e.empno  = re.empno
 where re.check = 'y';
 
--- (9) ¼¼ ¸í ÀÌ»óÀÇ »ç¿øÀÌ ÀÖ´Â ºÎ¼­ÀÇ »ç¿ø ÀÌ¸§À» º¸ÀÌ½Ã¿À.
-select e1.name as 'ÀÌ¸§'
+-- (9) ì„¸ ëª… ì´ìƒì˜ ì‚¬ì›ì´ ìžˆëŠ” ë¶€ì„œì˜ ì‚¬ì› ì´ë¦„ì„ ë³´ì´ì‹œì˜¤.
+select e1.name as 'ì´ë¦„'
 from employee e1, (
 					select if(count(*) >= 3, deptno , null) 'check'
 					from employee
