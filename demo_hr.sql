@@ -1,21 +1,7 @@
-/* 이름: demo_hr.sql*/
-/* 설명 */
-/* 출처: https://github.com/nomemory/hr-schema-mysql */
-
-/* root 계정으로 접속, hr 데이터베이스 생성, hr 계정 생성 */
-/* MySQL Workbench에서 초기화면에서 +를 눌러 root connection을 만들어 접속한다. */
-
-DROP DATABASE IF EXISTS hr;
-DROP USER IF EXISTS  hr@localhost;
-create user hr@localhost identified by 'hr';
+drop database if exists hr;
 create database hr;
-grant all privileges on hr.* to hr@localhost with grant option;
+use hr;
 
-USE hr;
-
-/* *************************************************************** 
-***************************CREATING TABLES************************
-**************************************************************** */
 CREATE TABLE regions (
 	region_id INT (11) UNSIGNED NOT NULL,
 	region_name VARCHAR(25),

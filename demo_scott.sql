@@ -1,8 +1,6 @@
-/* �씠由�: demo_scott.sql*/
-/* �꽕紐� */
-
-/* madang 怨꾩젙�쑝濡� �젒�냽, bonus,dept,emp,salegrade �깮�꽦 */
-/* MySQL Workbench�뿉�꽌   madang connection�쓣 �넻�빐 �젒�냽�븳�떎. */
+drop database if exists scott;
+create database scott;
+USE scott;
 
 DROP TABLE IF EXISTS BONUS;
 DROP TABLE IF EXISTS EMP;

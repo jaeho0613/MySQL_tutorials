@@ -1,18 +1,5 @@
-/* 이름: demo_madang.sql */
-/* 설명 */
- 
-/* root 계정으로 접속, madang 데이터베이스 생성, madang 계정 생성 */
-/* MySQL Workbench에서 초기화면에서 +를 눌러 root connection을 만들어 접속한다. */
-DROP DATABASE IF EXISTS  madang;
-DROP USER IF EXISTS  madang@localhost;
-create user madang@localhost identified WITH mysql_native_password  by 'madang';
+drop database if exists madang;
 create database madang;
-grant all privileges on madang.* to madang@localhost with grant option;
-commit;
-
-/* madang DB 자료 생성 */
-/* 이후 실습은 MySQL Workbench에서 초기화면에서 +를 눌러 madang connection을 만들어 접속하여 사용한다. */
- 
 USE madang;
 
 CREATE TABLE Book (
